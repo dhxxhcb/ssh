@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lib (2)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/first_pro/web/WEB-INF/lib/org.springframework.test-3.0.5.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

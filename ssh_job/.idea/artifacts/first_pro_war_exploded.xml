@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="first_pro:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/first_pro_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="first_pro/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="first_pro" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="lib (2)" />
+          <element id="library" level="module" name="JUnit4" module-name="first_pro" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

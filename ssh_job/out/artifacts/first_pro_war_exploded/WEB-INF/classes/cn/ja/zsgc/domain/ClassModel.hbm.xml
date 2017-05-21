@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.ja.zsgc.domain.ClassModel" table="tbl_class" schema="sshdb">
+        <id name="cid" column="cid">
+            <generator class="increment"/>
+        </id>
+        <property name="cname" column="cname"/>
+        <property name="gid" column="gid"/>
+
+        <set name="studentModelset" inverse="true">
+            <key>
+                <column name="cid" length="30" />
+            </key>
+            <one-to-many class="cn.ja.zsgc.domain.StudentModel" />
+        </set>
+    </class>
+</hibernate-mapping>

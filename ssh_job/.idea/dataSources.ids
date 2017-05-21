@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @localhost" uuid="159888ad-5874-40ce-af4d-ff3f327675e2">
+    <database-info product="MySQL" version="5.5.27" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="struts_final_three"/>
+      <table id="2" parent="1" name="s_user"/>
+      <column id="3" parent="2" name="userID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="4" parent="2" name="userName">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="5" parent="2" name="logonName">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="6" parent="2" name="logonPwd">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="7" parent="2" name="sex">
+        <data-type>varchar(10)</data-type>
+      </column>
+      <column id="8" parent="2" name="birthday">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="9" parent="2" name="education">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="10" parent="2" name="telephone">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="11" parent="2" name="interest">
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="12" parent="2" name="path">
+        <data-type>varchar(500)</data-type>
+      </column>
+      <column id="13" parent="2" name="filename">
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="14" parent="2" name="remark">
+        <data-type>varchar(500)</data-type>
+      </column>
+      <key id="15" parent="2" name="PRIMARY">
+        <columns>userID</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+  <data-source name="MySQL - sshdb@localhost" uuid="dbae1fea-d729-4e29-a264-058133f2a4a4">
+    <database-info product="MySQL" version="5.5.27" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="sshdb"/>
+      <table id="2" parent="1" name="tbl_student"/>
+      <table id="3" parent="1" name="tbl_class"/>
+      <table id="4" parent="1" name="tbl_grade"/>
+      <column id="5" parent="2" name="sid">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="6" parent="2" name="sname">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="7" parent="2" name="sage">
+        <data-type>int(1)</data-type>
+      </column>
+      <column id="8" parent="2" name="sphone">
+        <data-type>varchar(11)</data-type>
+      </column>
+      <column id="9" parent="2" name="cid">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="10" parent="2" name="gid">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="11" parent="2" name="tid">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="12" parent="2" name="PRIMARY">
+        <columns>sid</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="13" parent="2" name="FKA52B4ABAE5A1C3D4">
+        <columns>cid</columns>
+        <ref-key>tbl_class.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="14" parent="2" name="FKA52B4ABAE5A203A5">
+        <columns>tid</columns>
+        <ref-key>tbl_class.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="15" parent="3" name="cid">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="3" name="cname">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="17" parent="3" name="gid">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="18" parent="3" name="PRIMARY">
+        <columns>cid</columns>
+        <primary>1</primary>
+      </key>
+      <column id="19" parent="4" name="gid">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="20" parent="4" name="gname">
+        <data-type>varchar(30)</data-type>
+      </column>
+      <key id="21" parent="4" name="PRIMARY">
+        <columns>gid</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

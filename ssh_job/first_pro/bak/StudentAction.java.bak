@@ -1,0 +1,91 @@
+package cn.ja.zsgc.web.action.base;
+
+import cn.ja.zsgc.domain.StudentModel;
+import cn.ja.zsgc.service.base.StudentService;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import org.apache.struts2.ServletActionContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import java.util.List;
+
+/**
+ *
+ */
+
+@Controller
+@Scope("prototype")
+public class StudentAction extends ActionSupport implements ModelDriven<StudentModel> {
+
+    private StudentModel studentModel = new StudentModel();
+
+    @Resource
+    private StudentService studentService;
+
+    public StudentModel getStudentModel() {
+        return studentModel;
+    }
+
+    public void setStudentModel(StudentModel studentModel) {
+        this.studentModel = studentModel;
+    }
+
+    //添加
+    public String addStudent(){
+        studentService.addStudent(studentModel);
+        return "findAllStudents";
+    }
+
+    //查询所有
+    public String findAllStudents(){
+        List<StudentModel> studentModelList = studentService.findAllStudents();
+
+        for (StudentModel model : studentModelList) {
+
+            System.out.println(model.getSname() + "..." + model.getSid());
+        }
+
+        ServletActionContext.getRequest().getSession().setAttribute("studentModelList", studentModelList);
+        ActionContext.getContext().getValueStack().set("allStudents",studentModelList);
+
+        return "listStudents";
+
+    }
+
+    //到修改要页面
+    public String toUpdateUI(){
+
+        int sid = studentModel.getSid();
+        StudentModel studnetByDb = studentService.findStudentBySid(studentModel);
+
+        ActionContext.getContext().getValueStack().set("student", studnetByDb);
+
+
+        return "updatestudent";
+
+
+    }
+
+    //修改
+    public String updateStudent(){
+
+        studentService.updateStudent(studentModel);
+
+        return "showstudents";
+    }
+
+    //删除
+    public String deleteStudent(){
+        studentService.deleteStuent(studentModel);
+        return "showstudents";
+    }
+
+    @Override
+    public StudentModel getModel() {
+        return studentModel;
+    }
+}

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.ja.zsgc.domain.GradeModel" table="tbl_grade" schema="sshdb">
+        <id name="gid" column="gid"/>
+        <property name="gname" column="gname"/>
+    </class>
+</hibernate-mapping>

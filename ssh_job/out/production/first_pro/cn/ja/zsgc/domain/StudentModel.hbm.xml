@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="cn.ja.zsgc.domain.StudentModel" table="tbl_student" schema="sshdb">
+        <id name="sid" column="sid">
+            <generator class="identity"/>
+        </id>
+        <property name="sname" column="sname"/>
+        <property name="sage" column="sage"/>
+        <property name="sphone" column="sphone"/>
+
+        <property name="gid" column="gid"/>
+        <many-to-one lazy="false" name="classModel" column="cid" class="cn.ja.zsgc.domain.ClassModel" fetch="select">
+        </many-to-one>
+    </class>
+</hibernate-mapping>
