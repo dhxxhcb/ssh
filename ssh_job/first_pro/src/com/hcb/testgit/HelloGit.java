@@ -10,6 +10,7 @@ public class HelloGit {
 	    System.out.println("hello git by dell...dell for conf");
 
         System.out.println("dell 提交");
+        System.out.println("dell 提交1");
     }
 }
 
